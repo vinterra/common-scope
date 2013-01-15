@@ -20,7 +20,6 @@ src/main/java/org/gcube/common/scope/impl/ScopedServiceMap.java -text
 src/main/java/org/gcube/common/scope/impl/ScopedTasks.java -text
 src/main/java/org/gcube/common/scope/impl/ServiceMapAdapter.java -text
 src/main/java/org/gcube/common/scope/impl/ServiceMapScanner.java -text
-src/main/java/org/gcube/common/scope/impl/Utils.java -text
 src/test/jarone/META-INF/services/org.gcube.common.scope.api.ScopeProvider -text
 src/test/jarone/org/acme/AlternativeProvider.java -text
 src/test/jartwo/META-INF/services/org.gcube.common.scope.api.ScopeProvider -text
