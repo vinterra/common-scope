@@ -1,22 +1,19 @@
 package org.gcube.common.scope.impl;
 
 import java.net.URL;
-import java.net.URLClassLoader;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.Pattern;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
+import org.gcube.common.scan.ClasspathScanner;
+import org.gcube.common.scan.ClasspathScannerFactory;
+import org.gcube.common.scan.matchers.NameMatcher;
+import org.gcube.common.scan.resources.ClasspathResource;
 import org.gcube.common.scope.api.ServiceMap;
-import org.reflections.Reflections;
-import org.reflections.scanners.ResourcesScanner;
-import org.reflections.util.ClasspathHelper;
-import org.reflections.util.ConfigurationBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -75,31 +72,11 @@ class ServiceMapScanner {
 	}
 
 	private static Set<String> getMapNames() {
-
-		// we include urls specified in manifest files, which is required
-		// when we run tests in surefire's forked-mode
-		ConfigurationBuilder builder = new ConfigurationBuilder().setUrls(
-				ClasspathHelper.forManifest(jarURLs())).setScanners(new ResourcesScanner());
-
-		Reflections reflections = new Reflections(builder);
-
-		return reflections.getResources(Pattern.compile(mapConfigPattern));
-	}
-	
-	private static Set<URL> jarURLs() {
-		final Set<URL> result = new HashSet<URL>();
-
-		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-		while (classLoader != null && classLoader.getParent() != null) {
-			if (classLoader instanceof URLClassLoader) {
-				URL[] urls = ((URLClassLoader) classLoader).getURLs();
-				if (urls != null) {
-					result.addAll(new HashSet<URL>(Arrays.asList(urls)));
-				}
-			}
-			classLoader = classLoader.getParent();
-		}
-
-		return result;
+		
+		ClasspathScanner scanner = ClasspathScannerFactory.scanner();
+		Set<String> names = new HashSet<String>();
+		for (ClasspathResource r : scanner.scan(new NameMatcher(mapConfigPattern)))
+			names.add(r.name());
+		return names;
 	}
 }
