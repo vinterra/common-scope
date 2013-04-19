@@ -35,14 +35,14 @@ public class DefaultScopeProvider implements ScopeProvider {
 	@Override
 	public void set(String scope) {
 		if (scope!=null)
-			log.info("setting scope {} in thread {}",scope,Thread.currentThread().getId());
+			log.debug("setting scope {} in thread {}",scope,Thread.currentThread().getId());
 		scopes.set(scope);
 		
 	}
 	
 	@Override
 	public void reset() {
-		log.info("resetting scope in thread {}",Thread.currentThread().getId());
+		log.debug("resetting scope in thread {}",Thread.currentThread().getId());
 		scopes.remove();
 	}
 	
