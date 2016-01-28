@@ -57,7 +57,5 @@ public class BindingTest {
 		executor.submit(cleanupTest).get();
 		
 	}
-	
-
-	
+		
 }

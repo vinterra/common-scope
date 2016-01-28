@@ -1,6 +1,9 @@
 package org.gcube.common.scope.api;
 
-import org.gcube.common.scope.impl.ScopedServiceMap;
+import javax.xml.bind.annotation.XmlSeeAlso;
+
+import org.gcube.common.scope.impl.DefaultServiceMap;
+
 
 /**
  * Resolves service endpoints statically configured for a given scope.
@@ -8,12 +11,8 @@ import org.gcube.common.scope.impl.ScopedServiceMap;
  * @author Fabio Simeoni
  *
  */
+@XmlSeeAlso(DefaultServiceMap.class)
 public interface ServiceMap {
-
-	/**
-	 * Shared {@link ServiceMap}.
-	 */
-	public static final ServiceMap instance = new ScopedServiceMap();
 	
 	/**
 	 * Returns the endpoint of a given service.

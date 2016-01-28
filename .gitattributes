@@ -16,10 +16,8 @@ src/main/java/org/gcube/common/scope/impl/DefaultScopeProvider.java -text
 src/main/java/org/gcube/common/scope/impl/DefaultServiceMap.java -text
 src/main/java/org/gcube/common/scope/impl/ScopeBean.java -text
 src/main/java/org/gcube/common/scope/impl/ScopeProviderScanner.java -text
-src/main/java/org/gcube/common/scope/impl/ScopedServiceMap.java -text
 src/main/java/org/gcube/common/scope/impl/ScopedTasks.java -text
 src/main/java/org/gcube/common/scope/impl/ServiceMapAdapter.java -text
-src/main/java/org/gcube/common/scope/impl/ServiceMapScanner.java -text
 src/test/jarone/META-INF/services/org.gcube.common.scope.api.ScopeProvider -text
 src/test/jarone/org/acme/AlternativeProvider.java -text
 src/test/jartwo/META-INF/services/org.gcube.common.scope.api.ScopeProvider -text
@@ -29,7 +27,6 @@ src/test/java/org/gcube/common/scope/BeanTest.java -text
 src/test/java/org/gcube/common/scope/BindingTest.java -text
 src/test/java/org/gcube/common/scope/ConfigurationTest.java -text
 src/test/java/org/gcube/common/scope/ProviderTest.java -text
-src/test/java/org/gcube/common/scope/ServiceMapTest.java -text
 src/test/resources/alternativeprovider.jar -text
 src/test/resources/oldermap.servicemap -text
 src/test/resources/testmap.servicemap -text

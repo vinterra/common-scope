@@ -1,5 +1,6 @@
 package org.gcube.common.scope.impl;
 
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -22,10 +23,11 @@ public class ServiceMapAdapter extends XmlAdapter<ServiceMapAdapter.ValueService
 	static class ValueServiceMap {
 		
 		@XmlElement(name="service")
-		Set<ServiceEntry> services;
+		Set<ServiceEntry> services = new HashSet<ServiceMapAdapter.ServiceEntry>();
 		
 	}
 	
+	@XmlRootElement
 	static class ServiceEntry {
 		
 		@XmlAttribute
@@ -50,6 +52,7 @@ public class ServiceMapAdapter extends XmlAdapter<ServiceMapAdapter.ValueService
 			ServiceEntry entry = new ServiceEntry();
 			entry.name=e.getKey();
 			entry.endpoint = e.getValue();
+			valueMap.services.add(entry);
 		}
 		return valueMap;
 	}
