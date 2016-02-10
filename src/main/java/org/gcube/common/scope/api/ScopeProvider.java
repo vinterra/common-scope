@@ -8,6 +8,7 @@ import org.gcube.common.scope.impl.ScopeProviderScanner;
  * @author Fabio Simeoni
  *
  */
+@Deprecated
 public interface ScopeProvider {
 
 	/**
