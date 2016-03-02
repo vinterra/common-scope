@@ -7,9 +7,11 @@ import org.gcube.common.scope.api.ScopeProvider;
 /**
  * Utility to bind the execution of standard tasks to the current scope.
  * 
+ * @deprecated use AuthorizedTask
  * @author Fabio Simeoni
  *
  */
+@Deprecated
 public class ScopedTasks {
 
 	/**
