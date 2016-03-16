@@ -12,7 +12,10 @@
 		<Change>Replaced Google's reflections with common-configuration-scanner</Change>
 		<Change>Lowered log level on scope settings to DEBUG</Change>
 	</Changeset>
-	<Changeset component="${build.finalName}" date="2014-09-09">
+	<Changeset component="common-scope-1.2.1" date="2014-09-09">
 		<Change>Dependency on scanner now based on ranged</Change>
+	</Changeset>
+	<Changeset component="common-scope-2.0.0" date="2014-09-09">
+		<Change>ScopeProvider removed</Change>
 	</Changeset>
 </ReleaseNotes>
