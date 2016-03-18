@@ -1,14 +1,11 @@
 * text=auto !eol
 /.classpath -text
 /.project -text
-distro/INSTALL -text
 distro/LICENSE -text
-distro/MAINTAINERS -text
 distro/README -text
 distro/changelog.xml -text
 distro/descriptor.xml -text
 distro/profile.xml -text
-distro/svnpath.txt -text
 /pom.xml -text
 src/main/java/org/gcube/common/scope/api/ScopeProvider.java -text
 src/main/java/org/gcube/common/scope/api/ServiceMap.java -text

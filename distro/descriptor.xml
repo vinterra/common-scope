@@ -15,9 +15,8 @@
 			<includes>
 				<include>README</include>
 				<include>LICENSE</include>
-				<include>INSTALL</include>
-				<include>MAINTAINERS</include>
 				<include>changelog.xml</include>
+                                <include>profile.xml</include>
 			</includes>
 			<fileMode>755</fileMode>
 			<filtered>true</filtered>
@@ -25,18 +24,9 @@
 	</fileSets>
 	<files>
 		<file>
-			<source>${distroDirectory}/profile.xml</source>
-			<outputDirectory>/</outputDirectory>
-			<filtered>true</filtered>
-		</file>
-		<file>
-			<source>target/${build.finalName}.jar</source>
+			<source>target/${build.finalName}.${project.packaging}</source>
 			<outputDirectory>/${artifactId}</outputDirectory>
 		</file>
-		<file>
-			<source>${distroDirectory}/svnpath.txt</source>
-			<outputDirectory>/${artifactId}</outputDirectory>
-			<filtered>true</filtered>
-		</file>
+
 	</files>
 </assembly>

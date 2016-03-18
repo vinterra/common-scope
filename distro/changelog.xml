@@ -8,7 +8,7 @@
 		<Change>Scope maps are now versioned and newer versions take precedence at startup</Change>
 		<Change>Scope maps can now be successfully looked up in VRE scopes (bug fix)</Change>
 	</Changeset>
-		<Changeset component="${build.finalName}" date="2013-01-27">
+		<Changeset component="common-scope-1.2.0" date="2013-01-27">
 		<Change>Replaced Google's reflections with common-configuration-scanner</Change>
 		<Change>Lowered log level on scope settings to DEBUG</Change>
 	</Changeset>
