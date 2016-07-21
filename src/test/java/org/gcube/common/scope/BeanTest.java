@@ -2,8 +2,8 @@ package org.gcube.common.scope;
 
 import static org.junit.Assert.*;
 
-import org.gcube.common.scope.impl.ScopeBean;
-import org.gcube.common.scope.impl.ScopeBean.Type;
+import org.gcube.common.scope.impl.ContextBean;
+import org.gcube.common.scope.impl.ContextBean.Type;
 import org.junit.Test;
 
 public class BeanTest {
@@ -13,22 +13,22 @@ public class BeanTest {
 	public void beansAreParsedCorrectly() {
 		
 		String infra ="/infra";
-		ScopeBean infraBean = new ScopeBean(infra);
+		ContextBean infraBean = new ContextBean(infra);
 		assertEquals("infra",infraBean.name());
 		assertTrue(infraBean.is(Type.INFRASTRUCTURE));
 		assertNull(infraBean.enclosingScope());
 		assertEquals(infra,infraBean.toString());
-		assertEquals(infraBean,new ScopeBean(infra));
+		assertEquals(infraBean,new ContextBean(infra));
 		
 		String vo =infra+"/vo";
-		ScopeBean vobean = new ScopeBean(vo);
+		ContextBean vobean = new ContextBean(vo);
 		assertEquals("vo",vobean.name());
 		assertTrue(vobean.is(Type.VO));
 		assertEquals(infraBean,vobean.enclosingScope());
 		assertEquals(vo,vobean.toString());
 		
 		String vre = vo+"/vre";
-		ScopeBean vrebean = new ScopeBean(vre);
+		ContextBean vrebean = new ContextBean(vre);
 		assertEquals("vre",vrebean.name());
 		assertTrue(vrebean.is(Type.VRE));
 		assertEquals(vobean,vrebean.enclosingScope());

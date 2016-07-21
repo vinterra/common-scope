@@ -8,7 +8,7 @@ package org.gcube.common.scope.impl;
  * @author Fabio Simeoni
  *
  */
-public class ScopeBean {
+public class ContextBean {
 
 	/**
 	 * Scope separators used in linear syntax.
@@ -33,7 +33,7 @@ public class ScopeBean {
 	/**
 	 * The enclosing scope, if any.
 	 */
-	private ScopeBean enclosingScope;
+	private ContextBean enclosingScope;
 	
 	
 	/**
@@ -65,11 +65,11 @@ public class ScopeBean {
 	 * Returns the enclosing scope, if any.
 	 * @return the enclosing scope, or <code>null</code> if the scope is top-level
 	 */
-	public ScopeBean enclosingScope() {
+	public ContextBean enclosingScope() {
 		return enclosingScope;
 	}
 	
-	public ScopeBean(String scope) throws IllegalArgumentException {
+	public ContextBean(String scope) throws IllegalArgumentException {
 		
 		String[] components=scope.split(separator);
 		
@@ -78,12 +78,12 @@ public class ScopeBean {
 		
 		if(components.length>3) {
 			this.name=components[3];
-			this.enclosingScope = new ScopeBean(separator+components[1]+separator+components[2]);
+			this.enclosingScope = new ContextBean(separator+components[1]+separator+components[2]);
 			this.type=Type.VRE;
 		}
 		else if (components.length>2) {
 			this.name=components[2];
-			this.enclosingScope=new ScopeBean(separator+components[1]);
+			this.enclosingScope=new ContextBean(separator+components[1]);
 			this.type=Type.VO;
 		}
 		else {
@@ -119,7 +119,7 @@ public class ScopeBean {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ScopeBean other = (ScopeBean) obj;
+		ContextBean other = (ContextBean) obj;
 		if (enclosingScope == null) {
 			if (other.enclosingScope != null)
 				return false;
